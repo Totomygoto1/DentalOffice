@@ -1,0 +1,16 @@
+﻿@page
+@model UploadFileModel
+@{
+}
+<form method="post" enctype="multipart/form-data">
+    <h2>Image & File Upload</h2>
+    <p class="newFont">
+        You can upload any Images and files here.<br />
+    </p>
+    <input type="file" asp-for="Upload" />
+    <p>
+        <input value="Upload Image" type="submit" />
+    </p>
+
+
+</form>

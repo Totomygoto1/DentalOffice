@@ -1,0 +1,49 @@
+﻿@page
+@model DentalOffice.Pages.DentistAvailables.IndexModel 
+
+@{
+    ViewData["Title"] = "Available Times";
+}
+
+<h2>Available Times</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Available From
+            </th>
+            <th>
+                Avaliable To
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DentistAvailable[0].Dentist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DentistAvailable)
+        {
+            <tr class="newFont">
+                <td>
+                    @Html.DisplayFor(modelItem => item.fromDatetime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.toDatetime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dentist.Firstname)
+                    @Html.DisplayFor(modelItem => item.Dentist.Lastname)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.dentistavailableID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.dentistavailableID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

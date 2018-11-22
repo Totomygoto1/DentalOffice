@@ -1,0 +1,37 @@
+﻿@page
+@model DentalOffice.Pages.Logins.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Login</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Login.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Login.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Login.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Login.Password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Login.Role)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Login.Role)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Login.loginID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

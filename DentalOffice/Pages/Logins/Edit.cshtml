@@ -1,0 +1,45 @@
+﻿@page
+@model DentalOffice.Pages.Logins.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Login</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Login.loginID" />
+            <div class="form-group">
+                <label asp-for="Login.Username" class="control-label"></label>
+                <input asp-for="Login.Username" class="form-control" />
+                <span asp-validation-for="Login.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Login.Password" class="control-label"></label>
+                <input asp-for="Login.Password" class="form-control" />
+                <span asp-validation-for="Login.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Login.Role" class="control-label"></label>
+                <input asp-for="Login.Role" class="form-control" />
+                <span asp-validation-for="Login.Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

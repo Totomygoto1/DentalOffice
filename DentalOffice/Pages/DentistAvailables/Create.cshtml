@@ -1,0 +1,46 @@
+﻿@page
+@model DentalOffice.Pages.DentistAvailables.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>DentistAvailable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label asp-for="DentistAvailable.Dentist" class="control-label"></label>
+            <select asp-for="DentistAvailable.dentistID" class="form-control"
+                    asp-items="@Model.DentistNameSL">
+                <option value="">-- Select Dentist --</option>
+            </select>
+
+            <div class="form-group">
+                <label asp-for="DentistAvailable.fromDatetime" class="control-label"></label>
+                <input asp-for="DentistAvailable.fromDatetime" class="form-control" />
+                <span asp-validation-for="DentistAvailable.fromDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DentistAvailable.toDatetime" class="control-label"></label>
+                <input asp-for="DentistAvailable.toDatetime" class="form-control" />
+                <span asp-validation-for="DentistAvailable.toDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,70 @@
+﻿@page
+@model DentalOffice.Pages.Visits.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Visit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.visitDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.visitDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.notes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.image1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.image1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.image2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.image2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.image3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.image3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.author)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.author)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.Customer.customerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.Dentist)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visit.Dentist.dentistID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Visit.visitID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

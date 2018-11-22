@@ -1,0 +1,67 @@
+﻿@page
+@model DentalOffice.Pages.Dentists.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dentist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.Firstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.Firstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.Lastname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.Lastname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.Street)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.Street)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.Zip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.Zip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dentist.SocialSecurity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dentist.SocialSecurity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Dentist.dentistID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,36 @@
+﻿@page
+@model DentalOffice.Pages.ProductListModel
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+<h2>ProductList</h2>
+
+<p>
+    @Model.title1
+</p>
+
+@foreach (var element in @Model.productlist1)
+{
+
+    <p class="newFont">@element</p>
+
+}
+
+<p>
+    @Model.title2
+</p>
+
+@foreach (var element in @Model.productlist2)
+{
+    <p class="newFont">@element</p>
+
+}
+
+
+
+
+
+
+
+

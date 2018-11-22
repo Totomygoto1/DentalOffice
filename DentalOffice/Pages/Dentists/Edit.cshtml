@@ -1,0 +1,70 @@
+﻿@page
+@model DentalOffice.Pages.Dentists.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Dentist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dentist.dentistID" />
+            <div class="form-group">
+                <label asp-for="Dentist.Firstname" class="control-label"></label>
+                <input asp-for="Dentist.Firstname" class="form-control" />
+                <span asp-validation-for="Dentist.Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.Lastname" class="control-label"></label>
+                <input asp-for="Dentist.Lastname" class="form-control" />
+                <span asp-validation-for="Dentist.Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.Street" class="control-label"></label>
+                <input asp-for="Dentist.Street" class="form-control" />
+                <span asp-validation-for="Dentist.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.Zip" class="control-label"></label>
+                <input asp-for="Dentist.Zip" class="form-control" />
+                <span asp-validation-for="Dentist.Zip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.City" class="control-label"></label>
+                <input asp-for="Dentist.City" class="form-control" />
+                <span asp-validation-for="Dentist.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.Phone" class="control-label"></label>
+                <input asp-for="Dentist.Phone" class="form-control" />
+                <span asp-validation-for="Dentist.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.Email" class="control-label"></label>
+                <input asp-for="Dentist.Email" class="form-control" />
+                <span asp-validation-for="Dentist.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dentist.SocialSecurity" class="control-label"></label>
+                <input asp-for="Dentist.SocialSecurity" class="form-control" />
+                <span asp-validation-for="Dentist.SocialSecurity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

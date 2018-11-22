@@ -1,0 +1,48 @@
+﻿@page
+@model DentalOffice.Pages.Logins.IndexModel
+
+@{
+    ViewData["Title"] = "Login List";
+}
+
+<h2>Login List</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Login[0].Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login[0].Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Login) {
+        <tr class="newFont">
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.loginID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.loginID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.loginID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

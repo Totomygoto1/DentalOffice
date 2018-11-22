@@ -1,0 +1,74 @@
+﻿@page
+@model DentalOffice.Pages.Visits.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Visit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label asp-for="Visit.Customer" class="control-label"></label>
+            <select asp-for="Visit.customerID" class="form-control"
+                    asp-items="@Model.CustomerNameSL">
+                <option value="">-- Select Customer --</option>
+            </select>
+
+            <label asp-for="Visit.Dentist" class="control-label"></label>
+            <select asp-for="Visit.dentistID" class="form-control"
+                    asp-items="@Model.DentistNameSL">
+                <option value="">-- Select Dentist --</option>
+            </select>
+
+            <div class="form-group">
+                <label asp-for="Visit.visitDate" class="control-label"></label>
+                <input asp-for="Visit.visitDate" class="form-control" />
+                <span asp-validation-for="Visit.visitDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p><label asp-for="Visit.notes" class="control-label"></label></p>
+
+                <textarea asp-for="Visit.notes" rows="8" cols="50"></textarea>
+               
+                <span asp-validation-for="Visit.notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Visit.image1" class="control-label"></label>
+                <input asp-for="Visit.image1" class="form-control" />
+                <span asp-validation-for="Visit.image1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Visit.image2" class="control-label"></label>
+                <input asp-for="Visit.image2" class="form-control" />
+                <span asp-validation-for="Visit.image2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Visit.image3" class="control-label"></label>
+                <input asp-for="Visit.image3" class="form-control" />
+                <span asp-validation-for="Visit.image3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Visit.author" class="control-label"></label>
+                <input asp-for="Visit.author" class="form-control" />
+                <span asp-validation-for="Visit.author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
